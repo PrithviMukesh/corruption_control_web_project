@@ -1,0 +1,82 @@
+.nav
+{
+background-color:#CCFFCC;
+     border:0px solid #dbdbdb;
+	 height:50px;
+}
+.nav a {
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.nav li {
+  display: inline;
+}
+
+.jumbotron {
+  background-image:url('inc.jpg');
+  height: 350px;
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:60px;
+}
+.jumbotron h4{
+  color:#fff;
+  font-size: 48px;  
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.learn-more {
+  background-color: #646466;
+}
+.learn-more{
+color:#fff;
+}
+.learn-more h3 {
+  font-family: 'Shift', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color:#00CCFF;
+}
+
+.learn-more a {
+  color: #00b0ff;
+}
+.News-updates{
+      background-color:#ffffff;
+     border-bottom:1px solid #dbdbdb;
+     }
+     .News-Updates h2{
+         color:#393c3d;
+      		   font-size: 48px;  
+
+                  }
+     .News-Updates p{   
+         font-size:15px;
+                  margin-bottom:13px;
+     }
+	.neighborhood-guides{
+      background-color: #efefef;
+     border-bottom:1px solid #dbdbdb;
+     }
+     .neighborhood-guides h2{
+         color:#393c3d;
+         font-size:24px;
+                  }
+     .neighborhood-guides p{   
+         font-size:15px;
+		margin-bottom:13px;
+     }
