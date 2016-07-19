@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+  <head><title>Budget Officer</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+	   <link rel="shortcut icon" href="favicon.png">
+	   <link rel="stylesheet" href="fs.css">
+	   	   <style type="text/css">
+		  ul li a {white-space:nowrap;}
+  ul li a:hover {background: #ffc;text-decoration:none}
+  li:hover ul {display: block; position: absolute;}
+   li:hover li {float:none;}
+  li:hover a {background: #efefef;}
+  li:hover li a:hover {background:#ffc;}
+  body{
+  background-color:#6495ED;
+  }
+  table,th,td
+  {
+   margin:0px auto;
+   width:0%;
+   background-color:99FFFF;
+   }
+   td
+   {
+   padding:8px;
+   }
+   p.five
+   {
+   font-family:Times new Roman;
+   }
+   
+   #passwordStrength
+{
+        height:5px;
+        display:block;
+        float:left;
+}
+.strength0
+{
+        width:250px;
+        background:#cccccc;
+}
+.strength1
+{
+        width:40px;
+        background:#ff0000;
+}
+.strength2
+{
+        width:75px;
+        background:#ff5f5f;
+}
+.strength3
+{
+        width:150px;
+        background:#56e500;
+}
+.strength4
+{
+        background:#399800;
+        width:200px;
+}
+.f{
+font-size: 14px;
+ font-weight: bold;
+  text-transform: uppercase;
+}
+ .container{
+ width:590px;
+ height:630px;
+ background:#C8F3BF;
+ font-family: Garamond;
+ margin:auto;
+ margin-top:0px;
+ margin-bottom:10px;
+ box-shadow:0 0 5px #999;
+ }
+  .contain{
+ width:1300px;
+ height:100px;
+ margin:auto;
+ }
+</style>
+  </head>
+
+  
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <ul class="pull-right">
+   
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="neighborhood-guides" style="background-color:#00cc99">
+  <div class="container">
+<script type="text/javascript">
+  function validate()
+{ 
+   if( document.RegistrationLogin.firstname.value == "" )
+   {
+     alert( "Please provide your First Name!" );
+     return false;
+   }
+   if( document.RegistrationLogin.lastname.value == "" )
+   {
+     alert( "Please provide your Last Name!" );
+     document.RegistrationLogin.lastname.focus() ;
+     return false;
+   }
+    if( document.RegistrationLogin.username.value == "" )
+   {
+     alert( "Please provide your User Name!" );
+     document.RegistrationLogin.username.focus() ;
+     return false;
+   }
+ if( document.RegistrationLogin.password.value == "" ||
+           document.RegistrationLogin.password.value.length < 5)
+   {
+     alert( "Please provide a password alleast 6 characters." );
+     document.RegistrationLogin.password.focus() ;
+     return false;
+	 }
+	 if( document.RegistrationLogin.password.value !=
+           document.RegistrationLogin.password1.value)
+   {
+     alert( "Two paswords are not match" );
+     document.RegistrationLogin.password1.focus() ;
+     return false;
+	 }
+   if ( ( RegistrationLogin.sex[0].checked == false ) && ( RegistrationLogin.sex[1].checked == false ) )
+   {
+   alert ( "Please choose your Gender: Male or Female" );
+   return false;
+   }   
+  if( document.RegistrationLogin.dob.value == "" )
+   {
+     alert( "Please provide your DOB!" );
+     document.RegistrationLogin.dob.focus() ;
+     return false;
+   }
+  if( document.RegistrationLogin.mobileno.value == "" ||
+           isNaN( document.RegistrationLogin.mobileno.value) ||
+           document.RegistrationLogin.mobileno.value.length != 10 )
+   {
+     alert( "Please provide a Mobile No in the format 123." );
+     document.RegistrationLogin.mobileno.focus() ;
+     return false;
+   }
+    if( document.RegistrationLogin.cityname.value == "" )
+   {
+     alert( "Please provide your City!" );
+     document.RegistrationLogin.cityname.focus() ;
+     return false;
+   }   
+   if( document.RegistrationLogin.statename.value == "" )
+   {
+     alert( "Please provide your statename!" );
+     document.RegistrationLogin.statename.focus() ;
+     return false;
+   }
+ }
+ </script>
+ <script>
+  function passwordStrength(password)
+{
+        var desc = new Array();
+        desc[0] = "Very Weak";
+        desc[1] = "Weak";
+        desc[2] = "Better";
+        desc[3] = "Good";
+        var score   = 0;
+ 
+        //if password bigger than 10 give 1 point
+ 
+        if (password.length > 5) score++;
+ 
+        //if password has both lower and uppercase characters give 1 point
+ 
+        if ( ( password.match(/[a-z]/) ) ||( password.match(/[A-Z]/) ) ) score++;
+ 
+        //if password has at least one number give 1 point
+ 
+        if (password.match(/d+/)) score++;
+ 
+        //if password has at least one special caracther give 1 point
+ 
+        if ( password.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/) ) score++;
+ 
+         document.getElementById("passwordDescription").innerHTML = desc[score];
+         document.getElementById("passwordStrength").className = "strength" + score;
+}
+  </script>
+  </head>
+  <body>
+  <form action="registerDBstore.php"name="RegistrationLogin" onsubmit="return (validate());" method="post">
+  <p class="five">
+  <table>
+  <tr>
+  <td colspan=2>
+  <center><font size=6><b>Budget Officer Registration</b></font></center>
+</td>
+</tr>
+<div>
+<tr>
+  <td class="f">First Name</td>
+  <td><input type="text" name="firstname" id="firstname" placeholder="Enter Your First Name" size="30"></td>
+  </tr>
+<tr>
+  <td class="f">Last Name</td>
+  <td><input type="text" name="lastname" id="lastname" placeholder="Enter Your Second Name"size="30"></td>
+  </tr>
+<tr>
+<td class="f">User Name</td>
+  <td><input type="text" name="username" id="emailid" size="30"></td>
+  </tr>
+<tr>
+  <td class="f">Password</td>
+  <td>
+<input type="password" name="password" id="password" placeholder="Atleast 6 characters" onkeyup="passwordStrength(this.value)"/>
+<tr><td colspan=2><div id="passwordDescription">Password not entered</div>
+<div id="passwordStrength" class="strength0"></div></td></tr>                    
+</td>
+</tr>
+<tr>
+  <td class="f">Confirm Password</td>
+  <td><input type="password" name="password1"id="password1" size="30"></td>
+</tr>
+<tr>
+  <td class="f">Sex</td>
+  <td class="f" ><input type="radio" name="sex" value="male" size="10">Male
+  <input type="radio" name="sex" value="Female" size="10">Female</td>
+</tr>
+<tr>
+<td class="f">Date of Birth</td>
+<td><input type="date"  name="dob" id="myDate" value="mm-dd-yyyy"></td>
+</tr>
+<tr>
+  <td class="f">MobileNo</td>
+  <td><input type="number" name="mobileno" id="mobileno" size="10"></td>
+  </tr>
+<tr>
+<td class="f">City</td>
+<td><input type="text" name="cityname" id="cname"></td>
+</tr>
+<tr>
+<td class="f">State</td>
+<td><input type="text" name="statename" id="sname"></td>
+</tr>
+<tr>
+  
+  <td><input type="submit" value="Submit" style="background-color:#ccf;border:0px;height:35px;width:100px;font-size:20px;"></td>
+  <td><input type="reset" value="Reset" style="background-color:#ccf;border:0px;height:35px;width:100px;font-size:20px;"></td>
+</tr>
+</table>
+</p> 
+</form> 
+</div>
+</div>
+ </div>
+     <div class="learn-more">
+	  <div class="contain">
+	 <div class="row">
+
+      <div class="col-md-4">
+			<h3>MISSION</h3>
+			<p>It aims to inform the people about how and who has utilized the money and for what purpose. </p>
+			<p><a href="#">See our entire mission</a></p>
+	      </div>
+		<div class="col-md-4">
+			<h3>VISSION</h3>
+			<p>Enhancement to the other fields like funds released during natural calamities.
+</p>
+			<p><a href="#">Learn more about vission</a></p>
+		  </div>
+		   <div class="col-md-4">
+			<h3>TRUST AND SAFETY</h3>
+			<p>Secure access of confidential data (user's details). SSL can be used.</p>
+			<p><a href="#">Learn more about trust </a></p>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+  </body>
+</html>

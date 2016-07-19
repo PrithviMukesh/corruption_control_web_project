@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+  <head><title>Log In </title>
+    <link rel="stylesheet" href="bootstrap.css"/>
+    <link rel="stylesheet" href="main.css"/>
+	   <link rel="shortcut icon" href="favicon.jpg"/>
+	   <link rel="stylesheet" href="fs.css"/>
+	   <script>
+  function validate()
+{ 
+ if (document.Login.module.value == "") {
+ alert("Please select type of user");
+        document.Login.module.focus();
+        return false;
+     }
+   if( document.Login.username.value == "" )
+   {
+     alert( "Please provide your User Name!" );
+     document.Login.username.focus() ;
+     return false;
+   }
+ if( document.Login.password.value == "")
+   {
+     alert( "Please provide a password " );
+     document.Login.password.focus() ;
+     return false;
+	 }
+    }
+ </script>
+<style>
+ ul li a:hover {background: #C8F3BF;text-decoration:none}
+   body{
+  background-color:#6495ED;
+  }
+  table,th,td
+  {
+   margin:0px auto;
+   background-color:99FFFF;
+   }
+   td
+   {
+   padding:8px;
+   }
+   p.five
+   {
+   font-family:Times new Roman;
+   }
+.f{
+font-size: 14px;
+ font-weight: bold;
+  text-transform: uppercase;
+}
+select{
+ padding:3px;
+ width:245px;
+ }
+ .container{
+ width:550px;
+ height:430px;
+ background:#FFFCDF;
+ margin:auto;
+ margin-top:0px;
+ margin-bottom:10px;
+ box-shadow:0 0 5px #999;
+ }
+ .contain{
+ width:1300px;
+ height:100px;
+ margin:auto;
+ }
+  .neighborhood-guides .container
+	 {
+	 height:510px;
+	 }
+</style>
+  </head>
+      <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <ul class="pull-right">
+   
+          <li><a href="#">Help</a></li>
+        </ul>
+      </div>
+    </div>
+<div class="neighborhood-guides" style="background-color:#00cc99">
+   <div class="container">
+  
+  <form action="checkdb.php" name="Login" onsubmit="return (validate());" method="post">
+  <p class="five">
+  <table>
+  <tr>
+  <td colspan=2>
+  <center><font size=6><b>Login</b></font></center>
+</td>
+</tr>
+<tr>
+<td class="f">Login As</td>
+<td>  <select name="module">
+          <option value="" selected>-----Select-----</option>
+          <option value="1">Budget officer</option>
+          <option value="2">Depart Head</option>
+          <option value="3">District comm</option>
+          <option value="4">contractor</option>
+          <option value="5">Citizen</option>
+        </select></td>
+</tr>
+<tr><td></td></tr>
+<tr>
+<td class="f">User Name</td>
+  <td><input type="text" name="username"  placeholder="Enter your username" size="30"/></td>
+  </tr>
+  <br><br>
+ <tr><td></td></tr>
+<tr>
+  <td class="f">Password</td>
+  <td>
+<input type="password" name="password" placeholder="Enter your password" size="30"/>
+    
+</td>
+</tr>
+<tr><td></td></tr>
+<tr><td></td></tr>
+<tr>
+    <td align="center"><input type="submit" value="Submit" style="background-color:#ccf;border:0px;height:35px;width:150px;font-size:20px;"></td>
+  <td align="center"><input type="reset" value="Reset" style="background-color:#ccf;border:0px;height:35px;width:150px;font-size:20px;"></td>
+</tr>
+<tr>
+<td colspan=2><a href="#">Forget username or password</a>
+</td>
+</tr>
+</table>
+</p> 
+</form> 
+</div>
+ </div>
+     <div class="learn-more">
+	  <div class="contain">
+	 <div class="row">
+
+      <div class="col-md-4">
+			<h3>MISSION</h3>
+			<p>It aims to inform the people about how and who has utilized the money and for what purpose. </p>
+			<p><a href="#">See our entire mission</a></p>
+	      </div>
+		<div class="col-md-4">
+			<h3>VISSION</h3>
+			<p>Enhancement to the other fields like funds released during natural calamities.
+</p>
+			<p><a href="#">Learn more about vission</a></p>
+		  </div>
+		   <div class="col-md-4">
+			<h3>TRUST AND SAFETY</h3>
+			<p>Secure access of confidential data (user's details). SSL can be used.</p>
+			<p><a href="#">Learn more about trust </a></p>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+
+</html>

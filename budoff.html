@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+  <head><title>Budget Management</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="main.css">
+	   <link rel="shortcut icon" href="favicon.png">
+	    
+	   <script>
+	   var am=100;
+	   function dist()
+	   {
+	   document.getElementById("vi").style.display='block';
+	   }
+	function getCookie(cname)
+	{
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++)
+	{
+        var c = ca[i];
+        while (c.charAt(0)==' ')
+		c = c.substring(1);
+        if (c.indexOf(name) != -1)
+		{
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+    }
+function lo()
+{
+alert("you are successfully logged out");
+}
+	   function coo()
+	   {
+	     var user=getCookie("username");
+	 document.getElementById("ur").innerHTML="Welcome Mr."+user;
+  	   }
+	   function chvalue(h)
+	   {
+	     
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+document.getElementById("e1").innerHTML=xmlhttp.responseText;
+  }
+}
+xmlhttp.open("GET","http://localhost/aj_store.php?val="+h,true);
+xmlhttp.send();
+	   }
+	   	   </script>
+	   <style>
+ ul {list-style: none; padding: 0px; margin: 0px;}
+  ul li {display: block; position: relative; float: left; border:0px solid #000}
+  li ul {display: none;}
+  ul li a {display:block;white-space:nowrap;}
+  ul li a:hover {background:tan;text-decoration:none}
+  li:hover ul {display: block; position: absolute;}
+   li:hover li {float:none;}
+  li:hover a {background: #efefef;}
+  li:hover li a:hover {background: #f7f7f7;}
+  .nav
+{
+background-color:#3d4543;
+}
+.nav a {
+  color: #fff;
+  }
+  .jumbotron {
+  background-image:url('bud.jpg');
+  }
+   body{
+  background-color:#6495ED;
+  }
+  table,th,td
+  {
+   margin:0px auto;
+   width:0%;
+   background-color:99FFFF;
+   }
+   td
+   {
+   padding:8px;
+   }
+   p.five
+   {
+   font-family:Times new Roman;
+   }
+   .f{
+font-size: 17px;
+ font-weight: bold;
+  text-transform: uppercase;
+}
+select{
+ padding:3px;
+ width:245px;
+ }
+.msg{
+ width:1050px;
+ background-color:#ffc;
+ margin:auto;
+ margin-top:10px;
+ margin-left:10px;
+ margin-bottom:10px;
+ box-shadow:0 0 5px #999;
+ }
+ .pa{
+ font-size:20px;
+ color:blue;
+ font-weight:normal;
+ }
+    	   </style>
+  </head>
+
+  <body onload="coo()">
+    <div class="nav">
+      <div class="container">
+        <ul class="pull-left">
+          <li><a href="budoff.html">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <ul class="pull-right">
+          <li><a id="ur"></a>
+</li>
+<li><a href="home.html" onclick="lo()">Logout</a></li>
+<li><a href="#">help</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="jumbotron">
+    <div class="container">
+        <h4>CCTBM is anchored on fighting against corruption and establishing transparent</h4>
+            <a href="#">Learn More</a>
+      </div>
+    </div> 
+	<div class="neighborhood-guides" align="center"  style="background-color:#FFFCDF"; >
+  <div class="container" id="vi" style="display:none">
+   <form action="budstore.php" name="form"  method="POST">
+  <p class="five">
+  <table>
+  <tr>
+  <td colspan=2>
+  <center><font size=6><b>Distribution</b></font></center>
+</td>
+</tr>
+<tr>
+  <td></td><td><p id="e1"></p></td>
+  </tr>
+<div>
+<tr>
+  <td class="f">Health Department</td>
+  <td><input type="number" name="hdt" size="10" onchange="chvalue(this.value)"></td>
+    </tr>
+  <tr>
+  <td class="f">Education Department</td>
+  <td><input type="number" name="edt" size="10" onchange="chvalue(this.value)"></td>
+  </tr>
+  <tr>
+  <td class="f">Agriculture Department</td>
+  <td><input type="number" name="adt" size="10" onchange="chvalue(this.value)"></td>
+  </tr>
+  <tr>
+  <td class="f">Social and welfare Department</td>
+  <td><input type="number" name="swdt" size="10" onchange="chvalue(this.value)"></td>
+  </tr>
+  </tr>
+<tr>
+  
+  <td><input type="submit" value="Submit" style="background-color:#ccf;border:0px;height:35px;width:100px;font-size:20px;"></td>
+  <td><input type="reset" value="Reset" style="background-color:#ccf;border:0px;height:35px;width:100px;font-size:20px;"></td>
+</tr>
+</table>
+</p> 
+</form> 
+  </div>
+	  </div>
+	</div>
+	<div class="News-updates">
+	<div class="container">
+	<p> <font face="arial" size="6" color="blue"> Spotlight</font></p>
+	<ul>
+	
+	<li><b><h2 align="center">Indian government issued 100 Crore points as an annual budget!!!</h2></b></li>
+	<br><input type="button" value="CLICK TO DISTRIBUTE" onclick="dist()"style="background-color:#ccf;border:0px;height:35px;width:250px;font-size:20px;">
+	<p id="up"></p>
+	</ul>
+	<div class="msg">
+	<h3>Message</h3>
+	<ol class="pa">
+<p>Control over all the money transactions of the departments. </p>
+<p>	Gets authentication   from respective department   officers   and DC's. </p>
+<p>	Takes care about illegal activities.</p> 
+</ol>
+	</div>
+	</div>
+	</div>
+    <div class="learn-more">
+	  <div class="container">
+	 <div class="row">
+
+      <div class="col-md-4">
+			<h3>MISSION</h3>
+			<p>It aims to inform the people about how and who has utilized the money and for what purpose.</p>
+			<p><a href="#">See our Entire Mission</a></p>
+	      </div>
+		<div class="col-md-4">
+			<h3>VISION</h3>
+			<p>Enhancement to the other fields like funds released during natural calamities.</p>
+			<p><a href="#">Learn more about Vision</a></p>
+		  </div>
+		   <div class="col-md-4">
+			<h3>TRUST and SAFETY</h3>
+			<p>Secure access of confidential data (user's details). SSL can be used.</p>
+			<p><a href="#">Learn more about Trust and Safety</a></p>
+		  </div>
+	    </div>
+	  </div>
+	</div>
+  </body>
+</html>
